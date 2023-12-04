@@ -10,7 +10,7 @@ body {
   display: table-cell;
   vertical-align: middle;
 }
-py-terminal {
+/* py-terminal {
   position: absolute;
   left: 0px;
   top: calc(100% - 175px);
@@ -19,7 +19,7 @@ py-terminal {
   overflow-y: auto;
   scroll-behavior: auto;
   background: black;
-}
+} */
 py-terminal::-webkit-scrollbar-track {
   background: #888888;
 }
