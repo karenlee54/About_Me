@@ -21,7 +21,7 @@ class Logo:
   y = 280
 
   def __init__(self):
-    self.img1 = p5.loadImage('Logo/Logo.png')
+    self.img1 = p5.loadImage('Logo.png')
 
   def draw(self):
     p5.push()
@@ -41,7 +41,7 @@ class Button:
   y = 540
 
   def __init__(self):
-    self.img2 = p5.loadImage('Logo/Logo_Horizontal.jpg')
+    self.img2 = p5.loadImage('Logo_Horizontal.jpg')
 
   def draw(self):
     p5.push()
@@ -53,9 +53,8 @@ class Button:
 class Karen:
   def __init__(self, x = 25, y = 500):
     p5.imageMode(p5.CENTER)
-    self.KL = p5.loadImage('Karen/K.png')
-    self.KE = p5.loadImage('Karen/KAREN_E.png')
-    self.KK = p5.loadImage('Karen/KAREN_K.png')
+    self.KE = p5.loadImage('KAREN_E.png')
+    self.KK = p5.loadImage('KAREN_K.png')
     self.timer = p5.millis()
     self.x = x
     self.y = y
@@ -77,9 +76,8 @@ class Karen_K(Karen):
 class Seoyoung:
   def __init__(self, x = 155, y = 500):
     p5.imageMode(p5.CENTER)
-    self.SL = p5.loadImage('Seoyoung/S.png')
-    self.SE = p5.loadImage('Seoyoung/SEOYOUNG_E.png')
-    self.SK = p5.loadImage('Seoyoung/SEOYOUNG_K.png')
+    self.SE = p5.loadImage('SEOYOUNG_E.png')
+    self.SK = p5.loadImage('SEOYOUNG_K.png')
     self.timer = p5.millis()
     self.x = x
     self.y = y
@@ -101,9 +99,8 @@ class Seoyoung_S(Seoyoung):
 class Lee:
   def __init__(self, x = 245, y = 500):
     p5.imageMode(p5.CENTER)
-    self.LL = p5.loadImage('Lee/L.png')
-    self.LE = p5.loadImage('Lee/LEE_E.png')
-    self.LK = p5.loadImage('Lee/LEE_K.png')
+    self.LE = p5.loadImage('LEE_E.png')
+    self.LK = p5.loadImage('LEE_K.png')
     self.timer = p5.millis()
     self.x = x
     self.y = y
@@ -125,8 +122,8 @@ class Lee_L(Lee):
 class Triangle:
   def __init__(self, x = 25, y = 30):
     p5.imageMode(p5.CORNER)
-    self.E = p5.loadImage('Full Name/Name_E.png')
-    self.K = p5.loadImage('Full Name/Name_K.png')
+    self.E = p5.loadImage('Name_E.png')
+    self.K = p5.loadImage('Name_K.png')
     self.L = p5.loadImage('Logo Animation.gif')
     self.timer = p5.millis()
     self.x = x
@@ -162,7 +159,7 @@ point = Point()
 point_list = [point]
 
 
-print('Assignment #8 (Final Project Part B)')
+# print('Assignment #8 (Final Project Part B)')
 
 logo = Logo()
 button = Button()
