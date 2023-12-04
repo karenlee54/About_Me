@@ -171,7 +171,7 @@ triangle = Triangle_T()
 
 
 def setup():
-  p5.createCanvas(800, 1200)  
+  p5.createCanvas(800, 1400)  
 
 def draw():
   p5.background(255)   
