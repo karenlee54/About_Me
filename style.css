@@ -20,7 +20,7 @@ body {
   scroll-behavior: auto;
   background: black;
 } */
-py-terminal::-webkit-scrollbar-track {
+/* py-terminal::-webkit-scrollbar-track {
   background: #888888;
 }
 py-terminal::-webkit-scrollbar-thumb {
@@ -28,4 +28,4 @@ py-terminal::-webkit-scrollbar-thumb {
 }
 py-terminal::-webkit-scrollbar {
   width: 15px;
-}
+} */
