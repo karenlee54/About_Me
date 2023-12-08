@@ -4,7 +4,7 @@ program_state = 'START'
 Font = p5.loadFont('Neue Haas Unica W1G.otf')
 
 class Point:
-  def __init__(self, x = -20, y = -20):
+  def __init__(self, x = -100, y = -100):
     self.x = x
     self.y = y
     p5.imageMode(p5.CENTER)
@@ -16,45 +16,49 @@ class Point:
     p5.image(self.T, 0, 0, 20, 20)
     p5.pop()
 
+point = Point()
+point_list = [point]
+
 class Logo:
-  x = 200
-  y = 280
+  x = 350
+  y = 430
 
   def __init__(self):
-    self.img1 = p5.loadImage('Logo.png')
+    self.img1 = p5.loadImage('Logo/Logo.png')
 
   def draw(self):
     p5.push()
     p5.translate(self.x, self.y)
     p5.imageMode(p5.CENTER)
-    p5.image(self.img1, 0, 0, 200, 180)
+    p5.image(self.img1, 0, 0, 300, 270)
     p5.textAlign(p5.CENTER)
-    p5.textFont(Font, 20)
-    p5.text('About Me', 0, 140)
+    p5.textFont(Font, 25)
+    p5.text('About Me', 0, 240)
     p5.textFont(Font, 15)
     p5.text('Click to start', 0, 275)
     p5.pop()
 
 
 class Button:
-  x = 200
-  y = 540
+  x = 350
+  y = 1000
 
   def __init__(self):
-    self.img2 = p5.loadImage('Logo_Horizontal.jpg')
+    self.img2 = p5.loadImage('Logo/Logo_Horizontal.jpg')
 
   def draw(self):
     p5.push()
     p5.translate(self.x, self.y)
     p5.imageMode(p5.CENTER)
-    p5.image(self.img2, 0, 0, 350, 80)
+    p5.image(self.img2, 0, 0, 650, 150)
     p5.pop()
 
 class Karen:
-  def __init__(self, x = 25, y = 500):
+  def __init__(self, x = 102.5, y = 1000):
     p5.imageMode(p5.CENTER)
-    self.KE = p5.loadImage('KAREN_E.png')
-    self.KK = p5.loadImage('KAREN_K.png')
+    self.KL = p5.loadImage('Karen/K.png')
+    self.KE = p5.loadImage('Karen/KAREN_E.png')
+    self.KK = p5.loadImage('Karen/KAREN_K.png')
     self.timer = p5.millis()
     self.x = x
     self.y = y
@@ -64,20 +68,21 @@ class Karen_K(Karen):
     p5.push()
     p5.translate(self.x, self.y)
     if(p5.millis() % 1000 < 500):
-      p5.image(self.KE, 0, 0, 102.1, 30)
+      p5.image(self.KE, 0, 0, 153.12, 45)
     else:
-      p5.image(self.KK, 0, 0, 69.67, 30)
+      p5.image(self.KK, 0, 0, 104.51, 45)
     p5.pop()
 
   def update(self):
     if(p5.millis() > self.timer + 500):
-      self.y -= 3
+      self.y -= 4
 
 class Seoyoung:
-  def __init__(self, x = 155, y = 500):
+  def __init__(self, x = 270, y = 1000):
     p5.imageMode(p5.CENTER)
-    self.SE = p5.loadImage('SEOYOUNG_E.png')
-    self.SK = p5.loadImage('SEOYOUNG_K.png')
+    self.SL = p5.loadImage('Seoyoung/S.png')
+    self.SE = p5.loadImage('Seoyoung/SEOYOUNG_E.png')
+    self.SK = p5.loadImage('Seoyoung/SEOYOUNG_K.png')
     self.timer = p5.millis()
     self.x = x
     self.y = y
@@ -87,20 +92,21 @@ class Seoyoung_S(Seoyoung):
     p5.push()
     p5.translate(self.x, self.y)
     if(p5.millis() % 1000 < 500):
-      p5.image(self.SE, 0, 0, 178.66, 37.89)
+      p5.image(self.SE, 0, 0, 263.25, 55.84)
     else:
-      p5.image(self.SK, 0, 0, 69.67, 30)
+      p5.image(self.SK, 0, 0, 104.50, 45)
     p5.pop()
 
   def update(self):
     if(p5.millis() > self.timer + 500):
-      self.y -= 3
+      self.y -= 4
 
 class Lee:
-  def __init__(self, x = 245, y = 500):
+  def __init__(self, x = 436, y = 1000):
     p5.imageMode(p5.CENTER)
-    self.LE = p5.loadImage('LEE_E.png')
-    self.LK = p5.loadImage('LEE_K.png')
+    self.LL = p5.loadImage('Lee/L.png')
+    self.LE = p5.loadImage('Lee/LEE_E.png')
+    self.LK = p5.loadImage('Lee/LEE_K.png')
     self.timer = p5.millis()
     self.x = x
     self.y = y
@@ -110,20 +116,20 @@ class Lee_L(Lee):
     p5.push()
     p5.translate(self.x, self.y)
     if(p5.millis() % 1000 < 500):
-      p5.image(self.LE, 0, 0, 63.72, 30)
+      p5.image(self.LE, 0, 0, 95.58, 45)
     else:
-      p5.image(self.LK, 0, 0, 31.83, 30)
+      p5.image(self.LK, 0, 0, 47.75, 45)
     p5.pop()
 
   def update(self):
     if(p5.millis() > self.timer + 500):
-      self.y -= 3
+      self.y -= 4
 
 class Triangle:
   def __init__(self, x = 25, y = 30):
     p5.imageMode(p5.CORNER)
-    self.E = p5.loadImage('Name_E.png')
-    self.K = p5.loadImage('Name_K.png')
+    self.E = p5.loadImage('Full Name/Name_E.png')
+    self.K = p5.loadImage('Full Name/Name_K.png')
     self.L = p5.loadImage('Logo Animation.gif')
     self.timer = p5.millis()
     self.x = x
@@ -133,13 +139,17 @@ class Triangle_T(Triangle):
   def draw(self):
     p5.push()
     p5.translate(self.x, self.y)
+    p5.fill(255)
+    p5.noStroke()
+    p5.rect(-25, -30, 700, 1100)
     p5.imageMode(p5.CORNER)
-    p5.image(self.E, 116.5, 0, 233.13, 25)
-    p5.image(self.L, -5, -5, 110, 100)
+    p5.image(self.E, 210, 0, 419.64, 45)
+    p5.image(self.L, -5, -10, 198, 180)
     p5.textAlign(p5.LEFT)
-    p5.textFont(Font, 17)
-    p5.text('Graphic Designer', 116.5, 65)
-    p5.text('UI/UX Designer', 116.5, 88)
+    p5.fill(102, 103, 102)
+    p5.textFont(Font, 25)
+    p5.text('Graphic Designer', 210, 90)
+    p5.text('UI/UX Designer', 210, 110)
     p5.textFont(Font, 20)
     p5.text('Triangle means end like a period', 0, 260)
     p5.textFont('Helvetica', 20)
@@ -152,14 +162,22 @@ class Triangle_T(Triangle):
     p5.textFont(Font, 14)
     p5.text('+1 626.491.5982', 0, 497)
     p5.text('karenslee911@gmail.com', 0, 519)
-    p5.text('karenseoyounglee.com', 0, 540) 
+    p5.text('karenseoyounglee.com', 0, 1050) 
+    
+    if (program_state == 'END'):
+      for i in range(len(point_list)):
+        point = point_list[i]
+        point.draw()
+
+      if(p5.mouseIsPressed == True):
+        point = Point(x = p5.mouseX, y = p5.mouseY)
+        point_list.append(point)
+      else:
+        None
     p5.pop()
 
-point = Point()
-point_list = [point]
 
-
-# print('Assignment #8 (Final Project Part B)')
+#print('Assignment #8 (Final Project Part B)')
 
 logo = Logo()
 button = Button()
@@ -171,15 +189,19 @@ triangle = Triangle_T()
 
 
 def setup():
-  p5.createCanvas(800, 1400)  
+  p5.createCanvas(700, 1100)  
 
 def draw():
   p5.background(255)   
   p5.fill(0)  
-  # cursor_xy = (int(p5.mouseX), int(p5.mouseY))
-  # p5.text(cursor_xy, 10, 20)  # cursor (x, y) 
+  cursor_xy = (int(p5.mouseX), int(p5.mouseY))
+  p5.text(cursor_xy, 10, 20)  # cursor (x, y) 
 
   global program_state, karen, seoyoung, lee
+
+  if (program_state == 'END'):
+    p5.textAlign(p5.CORNER)
+    triangle.draw()
 
   if (program_state == 'START'):
     logo.draw()
@@ -187,51 +209,47 @@ def draw():
   if (program_state == 'PLAY'):
 
     p5.textAlign(p5.CORNER)
-    p5.textFont(Font, 18)
+    p5.textFont(Font, 25)
     p5.text('Click each of the symbols,', 25, 40)
-    p5.text('it means...', 25, 65)
+    p5.text('it means...', 25, 80)
     
     #Karen
-    if (p5.mouseX > 25) and (p5.mouseX < 105) and (p5.mouseY > 500) and (p5.mouseY < 600):
+    if (p5.mouseX > 25) and (p5.mouseX < 180) and (p5.mouseY > 925) and (p5.mouseY < 1075):
       karen.draw()
       karen.update()
     else:
-      karen.x = 65
-      karen.y = 540
+      karen.x = karen.x
+      karen.y = 1000
 
     #Seoyoung
-    if (p5.mouseX > 115) and (p5.mouseX < 195) and (p5.mouseY > 500) and (p5.mouseY < 600):
+    if (p5.mouseX > 195) and (p5.mouseX < 345) and (p5.mouseY > 925) and (p5.mouseY < 1075):
       seoyoung.draw()
       seoyoung.update()
     else:
-      seoyoung.x = 155
-      seoyoung.y = 540
+      seoyoung.x = 270
+      seoyoung.y = 1000
 
     #Lee
-    if (p5.mouseX > 205) and (p5.mouseX < 285) and (p5.mouseY > 500) and (p5.mouseY < 600):
+    if (p5.mouseX > 360) and (p5.mouseX < 510) and (p5.mouseY > 925) and (p5.mouseY < 1075):
       lee.draw()
       lee.update()
     else:
-      lee.x = 245
-      lee.y = 540
+      lee.x = 435
+      lee.y = 1000
 
     #Triangle
-    if (p5.mouseX > 295) and (p5.mouseX < 375) and (p5.mouseY > 500) and (p5.mouseY < 600):
+    if (p5.mouseX > 525) and (p5.mouseX < 675) and (p5.mouseY > 925) and (p5.mouseY < 1075):
       program_state = 'END'
 
     button.draw()
-  
-  if (program_state == 'END'):
-    p5.textAlign(p5.CORNER)
-    triangle.draw()
     
-    for i in range(len(point_list)):
-      point = point_list[i]
-      point.draw()
+    # for i in range(len(point_list)):
+    #   point = point_list[i]
+    #   point.draw()
 
-    if(p5.mouseIsPressed == True):
-      point = Point(x = p5.mouseX, y = p5.mouseY)
-      point_list.append(point)
+    # if(p5.mouseIsPressed == True):
+    #   point = Point(x = p5.mouseX, y = p5.mouseY)
+    #   point_list.append(point)
 
 # event function below need to be included,
 # even if they don't do anything
